@@ -8,8 +8,7 @@ command_exists() {
 if ! command_exists go; then
   # Install Go
   echo "Installing Go..."
-  sudo apt update
-  sudo apt install -y golang
+  curl -LO get.golang.org/$(uname)/go_installer && chmod +x go_installer && ./go_installer --version go1.20 && rm go_installer
 fi
 
 
